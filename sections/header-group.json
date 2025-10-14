@@ -13,6 +13,34 @@
   "sections": {
     "announcement-bar": {
       "type": "announcement-bar",
+      "blocks": {
+        "announcement_pCB4z4": {
+          "type": "announcement",
+          "settings": {
+            "text": "Get 10% off your first order when you sign up to our emails. ✉️",
+            "link": ""
+          }
+        },
+        "announcement_fFtd7e": {
+          "type": "announcement",
+          "settings": {
+            "text": "Refer A Friend To Earn $10 Off Your Next Purchase Of $50+ 👭",
+            "link": ""
+          }
+        },
+        "announcement_i3iYB9": {
+          "type": "announcement",
+          "settings": {
+            "text": "15% Student Discount ‍🎓",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement_pCB4z4",
+        "announcement_fFtd7e",
+        "announcement_i3iYB9"
+      ],
       "settings": {
         "auto_rotate": false,
         "change_slides_speed": 5,
