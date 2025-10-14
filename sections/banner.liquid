@@ -1,13 +1,9 @@
+{{ 'section-banner.css' | asset_url | stylesheet_tag }}
 <section class="color-{{ section.settings.color_scheme }} gradient">
   <div 
-    class="banner-background section-{{ section.id }}-padding"
-    style="
-      {% if section.settings.afbeelding %}
-        background-image: url({{ section.settings.afbeelding | image_url: width: 1600 }});
-      {% endif %}
-    "
+    class="banner-background section-{{ section.id }}-padding page-width page-width-desktop"
   >
-    <div class="banner-content page-width">
+    <div class="banner-content">
         <div class="banner-text">
             {% unless section.settings.title == blank %}
               <h1 class="banner-title">{{ section.settings.title }}</h1>
@@ -15,77 +11,43 @@
              {% unless section.settings.title == blank %}
               <h2 class="banner-subtitle">{{ section.settings.subtitle }}</h2>
             {% endunless %}
+            {% if section.settings.button_label != blank and section.settings.button_link != blank %}
+              <a href="{{ section.settings.button_link }}" class="banner-button">
+                  {{ section.settings.button_label }}
+              </a>
+            {% endif %}
         </div>
-      {% if section.settings.button_label != blank and section.settings.button_link != blank %}
-        <a href="{{ section.settings.button_link }}" class="banner-button">
-            {{ section.settings.button_label }}
-        </a>
-      {% endif %}
+       <div class="banner-images">
+        {% if section.settings.afbeelding %}
+          <div class="image">
+            <img
+              src="{{ section.settings.afbeelding | image_url: width: 1600 }}"
+              alt="{{ section.settings.afbeelding.alt | escape }}"
+              width="{{ section.settings.afbeelding.width }}"
+              height="{{ section.settings.afbeelding.height }}"
+              loading="lazy"
+            >
+          </div>
+        {% endif %}
+         {% if section.settings.afbeelding_2 %}
+          <div class="image">
+            <img
+              src="{{ section.settings.afbeelding_2 | image_url: width: 1600 }}"
+              alt="{{ section.settings.afbeelding_2.alt | escape }}"
+              width="{{ section.settings.afbeelding_2.width }}"
+              height="{{ section.settings.afbeelding_2.height }}"
+              loading="lazy"
+            >
+          </div>
+        {% endif %}
+      </div>
     </div>
   </div>
 </section>
 
 
 {% style %}
-.section-{{ section.id }}-padding {
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  margin-top: -10rem;
-}
 
-.banner-background {
-  position: relative;
-  width: 100%;
-  color: white;
-}
-
-.banner-content {
-  display: flex;
-  max-width: none;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.banner-title {
-  font-size: 3rem;
-  font-weight: bold;
-  margin: 0;
-  text-align: left;
-  color: white;
-  text-transform: uppercase;
-  line-height: 1;
-}
-
-.banner-subtitle {
-  font-size: 3rem;
-  font-weight: 400;
-  margin: 0;
-  text-align: left;
-  color: white;
-  text-transform: uppercase;
-}
-
-.banner-button {
-  display: inline-block;
-  padding: 1rem 2.5rem;
-  background-color: #ffffff;
-  color: #000000;
-  font-weight: 300;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-}
-
-.banner-button:hover {
-  background-color: #e5e5e5;
-}
 
 {% endstyle %}
 
@@ -125,6 +87,11 @@
       "type": "image_picker",
       "id": "afbeelding",
       "label": "Afbeelding"
+    },
+     {
+      "type": "image_picker",
+      "id": "afbeelding_2",
+      "label": "Afbeelding 2"
     },
     {
       "type": "color_scheme",

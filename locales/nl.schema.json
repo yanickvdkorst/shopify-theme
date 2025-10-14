@@ -832,6 +832,116 @@
         "name": "Uitgelichte collectie"
       }
     },
+     "featured-products": {
+      "name": "Uitgelichte producten",
+      "settings": {
+        "title": {
+          "label": "Opschrift",
+          "default": "Uitgelichte producten"
+        },
+        "collection": {
+          "label": "producten"
+        },
+        "products_to_show": {
+          "label": "Aantal producten"
+        },
+        "show_view_all": {
+          "label": "Knop 'Alles weergeven'",
+          "info": "Zichtbaar als een product meer producten heeft dan weergegeven"
+        },
+        "header": {
+          "content": "Productkaart"
+        },
+        "image_ratio": {
+          "label": "Breedte-/hoogteverhouding van afbeeldingen",
+          "options__1": {
+            "label": "Aanpassen aan afbeelding"
+          },
+          "options__2": {
+            "label": "Portret"
+          },
+          "options__3": {
+            "label": "Vierkant"
+          }
+        },
+        "show_secondary_image": {
+          "label": "Tweede afbeeldingen tonen als je de aanwijzer erboven houdt"
+        },
+        "show_vendor": {
+          "label": "Verkoper"
+        },
+        "show_rating": {
+          "label": "Productbeoordeling",
+          "info": "Een app is vereist voor beoordelingen. [Meer informatie](https://help.shopify.com/manual/online-store/themes/theme-structure/theme-features#featured-collection-show-product-rating)"
+        },
+        "columns_desktop": {
+          "label": "Kolommen"
+        },
+        "description": {
+          "label": "Beschrijving"
+        },
+        "show_description": {
+          "label": "Collectiebeschrijving uit beheerpaneel weergeven"
+        },
+        "description_style": {
+          "label": "Stijl beschrijving",
+          "options__1": {
+            "label": "Hoofdtekst"
+          },
+          "options__2": {
+            "label": "Subtitel"
+          },
+          "options__3": {
+            "label": "Hoofdletters"
+          }
+        },
+        "view_all_style": {
+          "options__1": {
+            "label": "Link"
+          },
+          "options__2": {
+            "label": "Knop Omlijnen"
+          },
+          "options__3": {
+            "label": "Knop Effen"
+          },
+          "label": "Stijl 'Alles weergeven'"
+        },
+        "enable_desktop_slider": {
+          "label": "Carrousel"
+        },
+        "full_width": {
+          "label": "Volledige breedte voor producten"
+        },
+        "header_mobile": {
+          "content": "Opmaak voor mobiel"
+        },
+        "columns_mobile": {
+          "label": "Kolommen",
+          "options__1": {
+            "label": "1"
+          },
+          "options__2": {
+            "label": "2"
+          }
+        },
+        "swipe_on_mobile": {
+          "label": "Carrousel"
+        },
+        "enable_quick_buy": {
+          "label": "Snel toevoegen"
+        },
+        "header_text": {
+          "content": "Tekst"
+        },
+        "header_collection": {
+          "content": "Opmaak collectie"
+        }
+      },
+      "presets": {
+        "name": "Uitgelichte producten"
+      }
+    },
     "footer": {
       "name": "Voettekst",
       "blocks": {
