@@ -226,6 +226,7 @@
             </aside>
           {%- endif -%}
         {%- endif -%}
+        
         <div class="product-grid-container" id="ProductGridContainer">
           {%- if search.results.size == 0 and search.filters != empty -%}
             <div
@@ -251,6 +252,7 @@
               id="product-grid"
               data-id="{{ section.id }}"
             >
+              {% render 'breadcrumbs' %}
               <div class="loading-overlay gradient"></div>
               <ul
                 class="grid product-grid  grid--{{ section.settings.columns_mobile }}-col-tablet-down grid--{{ section.settings.columns_desktop }}-col-desktop"

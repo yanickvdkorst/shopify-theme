@@ -124,6 +124,21 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
   }
 }
 
+.breadcrumbs {
+  font-size: 1.2rem;
+  color: var(--color-text);
+  margin-bottom: .5rem;
+}
+
+.breadcrumbs a {
+  color: var(--color-text-subtle);
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
 @media screen and (min-width: 990px) {
   .header:not(.drawer-menu).page-width {
     padding-left: 5rem;

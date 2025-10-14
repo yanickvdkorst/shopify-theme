@@ -1,0 +1,33 @@
+<nav class="breadcrumbs" role="navigation" aria-label="breadcrumbs">
+  <a href="{{ routes.root_url }}">Home</a>
+
+  {% assign current_collection = collection %}
+  {% if current_collection == blank and product %}
+    {% assign current_collection = product.collections.first %}
+  {% endif %}
+
+  {% if current_collection %}
+    {% comment %}
+      We splitsen de handle van de collectie, bijvoorbeeld "golfaccessoires-handschoenen"
+      dan kunnen we "golfaccessoires" als parent afleiden.
+    {% endcomment %}
+    {% assign parts = current_collection.handle | split: '-' %}
+
+    {% if parts.size > 1 %}
+      {% assign parent_handle = parts.first %}
+      {% assign parent_collection = collections[parent_handle] %}
+      {% if parent_collection %}
+        <span aria-hidden="true">/</span>
+        <a href="{{ parent_collection.url }}">{{ parent_collection.title }}</a>
+      {% endif %}
+    {% endif %}
+
+    <span aria-hidden="true">/</span>
+    <a href="{{ current_collection.url }}">{{ current_collection.title }}</a>
+  {% endif %}
+
+  {% if product %}
+    <span aria-hidden="true">/</span>
+    <span>{{ product.title }}</span>
+  {% endif %}
+</nav>
