@@ -59,17 +59,20 @@
 {% if related_collections != blank %}
   <div class="collection-grid-subcollections page-width">
    {% for subcollection in related_collections.value %}
-      <a href="{{ subcollection.url }}" class="collection-card">
+      <a href="{{ subcollection.url }}" class="collection-card {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} full-unstyled-link">
         {% assign img_width = 800 %}
         {% assign img_height = img_width | times: 9 | divided_by: 16 %}
-        <div class="collection-card-top">
+        <div class="collection-card-top media--hover-effect">
           <img 
+                     class="motion-reduce"
             src="{{ subcollection.image | image_url: width: img_width }}" 
             alt="{{ subcollection.title }}" 
             width="{{ img_width }}" 
-            height="{{ img_height }}">
+            height="{{ img_height }}"
+   
+          >
           </div>
-        <h2>{{ subcollection.title }}</h2>
+        <p class="">{{ subcollection.title }}</p>
       </a>
     {% endfor %}
   </div>
