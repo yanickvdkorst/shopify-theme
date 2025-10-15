@@ -8,7 +8,7 @@
  * ------------------------------------------------------------
  */
 {
- "sections": {
+  "sections": {
     "banner": {
       "type": "main-collection-banner",
       "settings": {
@@ -16,8 +16,64 @@
         "color_scheme": "scheme-5"
       }
     },
+    "collection_list_d93tdN": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_FpUfCy": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "golfhandschoenen"
+          }
+        },
+        "featured_collection_Gni4fT": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "handoekjes"
+          }
+        },
+        "featured_collection_UiyCCp": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "drankhouders"
+          }
+        },
+        "featured_collection_Q9aqpV": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "muziekboxen"
+          }
+        },
+        "featured_collection_PPAEgV": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "oefenmateriaal"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_FpUfCy",
+        "featured_collection_Gni4fT",
+        "featured_collection_UiyCCp",
+        "featured_collection_Q9aqpV",
+        "featured_collection_PPAEgV"
+      ],
+      "name": "t:sections.collection-list.presets.name",
+      "settings": {
+        "title": "Ons aanbod",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 5,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
   },
   "order": [
-    "banner"
+    "banner",
+    "collection_list_d93tdN"
   ]
 }
