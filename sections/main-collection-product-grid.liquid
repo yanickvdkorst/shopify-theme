@@ -46,7 +46,7 @@
     {% for subcollection in related_collections %}
       <a href="{{ subcollection.url }}" class="collection-card">
         {% assign img_width = 800 %}
-{% assign img_height = img_width | times: 9 | divided_by: 16 %}
+      {% assign img_height = img_width | times: 9 | divided_by: 16 %}
 
 <img 
   src="{{ subcollection.image | image_url: width: img_width }}" 
