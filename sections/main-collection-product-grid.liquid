@@ -39,25 +39,42 @@
 <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}">
   <div class="page-width">{% render 'breadcrumbs' %}</div>
   {%- comment -%} Check of de collectie subcollecties heeft via metafield {%- endcomment -%}
-{% assign related_collections = collection.metafields.custom.related_collections.value %}
+{% assign related_collections = collection.metafields.custom.related_collections %}
+ {% comment %} <pre>
+  Related Collections: {{ related_collections.value }}
+   {% for subcollection in related_collections.value %}
+      <a href="{{ subcollection.url }}" class="collection-card">
+        {% assign img_width = 800 %}
+        {% assign img_height = img_width | times: 9 | divided_by: 16 %}
+        <img 
+          src="{{ subcollection.image | image_url: width: img_width }}" 
+          alt="{{ subcollection.title }}" 
+          width="{{ img_width }}" 
+          height="{{ img_height }}">
+        <h2>{{ subcollection.title }}</h2>
+      </a>
+    {% endfor %}
+</pre>  {% endcomment %}
 
 {% if related_collections != blank %}
   <div class="collection-grid-subcollections page-width">
-    {% for subcollection in related_collections %}
+   {% for subcollection in related_collections.value %}
       <a href="{{ subcollection.url }}" class="collection-card">
         {% assign img_width = 800 %}
-      {% assign img_height = img_width | times: 9 | divided_by: 16 %}
-
-<img 
-  src="{{ subcollection.image | image_url: width: img_width }}" 
-  alt="{{ subcollection.title }}" 
-  width="{{ img_width }}" 
-  height="{{ img_height }}">
+        {% assign img_height = img_width | times: 9 | divided_by: 16 %}
+        <div class="collection-card-top">
+          <img 
+            src="{{ subcollection.image | image_url: width: img_width }}" 
+            alt="{{ subcollection.title }}" 
+            width="{{ img_width }}" 
+            height="{{ img_height }}">
+          </div>
         <h2>{{ subcollection.title }}</h2>
       </a>
     {% endfor %}
   </div>
-{% else %}
+{% endif %}
+  
   {%- paginate collection.products by section.settings.products_per_page -%}
     {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
     {%- if section.settings.enable_sorting and section.settings.filter_type == 'vertical' -%}
@@ -211,7 +228,6 @@
       </div>
     </div>
   {%- endpaginate -%}
-  {% endif %}
   {% if section.settings.image_shape == 'arch' %}
     {{ 'mask-arch.svg' | inline_asset_content }}
   {%- endif -%}
